@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="AdditionalModuleElements">
+    <content url="file://$MODULE_DIR$" dumb="true">
+      <sourceFolder url="file://$MODULE_DIR$/DAO-rest/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/business-rest/src/main/java" isTestSource="false" />
+    </content>
+  </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="a273b771-a99a-4cfb-a357-fc22714f5069" />
+  </component>
+</module>
