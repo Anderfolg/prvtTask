@@ -21,29 +21,29 @@ public class Payment {
     private Long id;
 
     @Column(name = "payer_name", nullable = false)
-    private String payerName;  // ФИО плательщика
+    private String payerName;
 
     @Column(name = "payer_inn", nullable = false)
-    private Long payerInn;  // ИНН плательщика
+    private Long payerInn;
 
     @Column(name = "payer_card_no", nullable = false)
-    private Long payerCardNo;  // No Карты плательщика
+    private Long payerCardNo;
 
     @Column(name = "recipient_account", nullable = false)
-    private Long recipientAccount;  // Расчетный счет получателя
+    private Long recipientAccount;
 
     @Column(name = "recipient_mfo", nullable = false)
-    private String recipientMfo;  // МФО получателя
+    private String recipientMfo;
 
     @Column(name = "recipient_okpo", nullable = false)
-    private Long recipientOkpo;  // ОКПО получателя
+    private Long recipientOkpo;
 
     @Column(name = "recipient_name", nullable = false)
-    private String recipientName;  // Наименование получателя
+    private String recipientName;
 
     @Column(name = "payment_period", nullable = false)
-    private Long paymentPeriod;  // Период списания (каждую N минут/часов/дней)
+    private Long paymentPeriod;
 
     @Column(name = "payment_amount", nullable = false)
-    private BigDecimal paymentAmount;  // Сумма платежа
+    private BigDecimal paymentAmount;
 }

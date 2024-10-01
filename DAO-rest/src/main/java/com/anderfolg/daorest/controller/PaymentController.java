@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/payments")
+@RequestMapping("/payments")
 @RequiredArgsConstructor
 @Validated
-public class PaymentController implements PaymentControllerSpec{
+public class PaymentController implements PaymentControllerSpec {
     private final PaymentService paymentService;
+
     @Override
     @PostMapping
     public ResponseEntity<Payment> createPayment( PaymentDto paymentDto ) {

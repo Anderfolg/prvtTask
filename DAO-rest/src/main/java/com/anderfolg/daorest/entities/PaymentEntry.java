@@ -20,7 +20,7 @@ public class PaymentEntry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name ="entry_time")
+    @Column(name = "entry_time")
     private LocalDateTime entryTime;
     @ManyToOne
     @JoinColumn(name = "payment_id", referencedColumnName = "id")

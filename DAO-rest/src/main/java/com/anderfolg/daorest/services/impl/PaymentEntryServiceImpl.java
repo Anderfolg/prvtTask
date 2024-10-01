@@ -17,6 +17,7 @@ import java.util.List;
 public class PaymentEntryServiceImpl implements PaymentEntryService {
     private final PaymentEntryRepository paymentEntryRepository;
     private final PaymentService paymentService;
+
     @Override
     public PaymentEntry createPaymentEntry( PaymentEntryDto paymentEntryDTO ) {
         log.info("Creating new payment entry");

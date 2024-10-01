@@ -29,8 +29,7 @@ public class ClientService {
                     log.debug("GET response: {}", responseBody);
                     return responseBody;
                 } else {
-                    log.error("Failed GET response: {} with status code: {}",
-                            response.getEntity(), response.getCode());
+                    log.error("Failed GET response: {} with status code: {}", response.getEntity(), response.getCode());
                     return null;
                 }
             }
@@ -54,8 +53,7 @@ public class ClientService {
                     log.debug("POST response: {}", responseBody);
                     return responseBody;
                 } else {
-                    log.error("Failed POST response: {} with status code: {}",
-                            response.getEntity(), response.getCode());
+                    log.error("Failed POST response: {} with status code: {}", response.getEntity(), response.getCode());
                     return null;
                 }
             }
@@ -79,8 +77,7 @@ public class ClientService {
                     log.debug("PUT response: {}", responseBody);
                     return responseBody;
                 } else {
-                    log.error("Failed PUT response: {} with status code: {}",
-                            response.getEntity(), response.getCode());
+                    log.error("Failed PUT response: {} with status code: {}", response.getEntity(), response.getCode());
                     return null;
                 }
             }
@@ -101,8 +98,7 @@ public class ClientService {
                     log.debug("DELETE request successful for URL: {}", requestUrl);
                     return true;
                 } else {
-                    log.error("Failed DELETE response with status code: {}",
-                            response.getCode());
+                    log.error("Failed DELETE response with status code: {}", response.getCode());
                     return false;
                 }
             }

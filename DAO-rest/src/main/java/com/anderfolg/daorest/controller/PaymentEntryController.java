@@ -12,8 +12,9 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/payment-entries")
-public class PaymentEntryController implements PaymentEntryControllerSpec{
+public class PaymentEntryController implements PaymentEntryControllerSpec {
     private final PaymentEntryService paymentEntryService;
+
     @Override
     @PostMapping
     public ResponseEntity<PaymentEntry> createPaymentEntry( PaymentEntryDto paymentEntryDTO ) {

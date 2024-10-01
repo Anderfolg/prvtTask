@@ -8,7 +8,7 @@ public enum EntryStatus {
     NOTED("Noted");
     private final String value;
 
-    EntryStatus(String value) {
+    EntryStatus( String value ) {
         this.value = value;
     }
 }

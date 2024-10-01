@@ -18,14 +18,14 @@ public class PaymentServiceImpl implements PaymentService {
     private final PaymentRepository paymentRepository;
 
     @Override
-    public Payment createPayment(PaymentDto paymentDto) {
+    public Payment createPayment( PaymentDto paymentDto ) {
         log.info("Creating new payment");
         Payment payment = mapToPayment(paymentDto);
         return paymentRepository.save(payment);
     }
 
     @Override
-    public Payment getPayment(Long id) {
+    public Payment getPayment( Long id ) {
         log.info("Retrieving payment by id: {}", id);
         return paymentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Payment not found with id: " + id));
@@ -38,25 +38,25 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public List<Payment> getAllPaymentsByPayerName(String payerName) {
+    public List<Payment> getAllPaymentsByPayerName( String payerName ) {
         log.info("Retrieving all payments by payer name: {}", payerName);
         return paymentRepository.getAllByPayerName(payerName);
     }
 
     @Override
-    public List<Payment> getAllPaymentByPayerInn(Long payerInn) {
+    public List<Payment> getAllPaymentByPayerInn( Long payerInn ) {
         log.info("Retrieving all payments by payer INN: {}", payerInn);
         return paymentRepository.getAllByPayerInn(payerInn);
     }
 
     @Override
-    public List<Payment> getAllPaymentByRecipientOkpo(Long recipientOkpo) {
+    public List<Payment> getAllPaymentByRecipientOkpo( Long recipientOkpo ) {
         log.info("Retrieving all payments by recipient OKPO: {}", recipientOkpo);
         return paymentRepository.getAllByRecipientOkpo(recipientOkpo);
     }
 
     @Override
-    public Payment updatePayment(Long id, PaymentDto paymentDto) {
+    public Payment updatePayment( Long id, PaymentDto paymentDto ) {
         log.info("Updating payment by id: {}", id);
         Payment paymentToUpdate = getPayment(id);
         updatePaymentDetails(paymentToUpdate, paymentDto);
@@ -64,14 +64,14 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public void deletePayment(Long id) {
+    public void deletePayment( Long id ) {
         log.info("Deleting payment by id: {}", id);
         Payment paymentToDelete = getPayment(id);
         paymentRepository.delete(paymentToDelete);
     }
 
     // Helper method to map PaymentDto to Payment
-    private Payment mapToPayment(PaymentDto paymentDto) {
+    private Payment mapToPayment( PaymentDto paymentDto ) {
         return Payment.builder()
                 .payerName(paymentDto.payerName())
                 .payerInn(paymentDto.payerInn())
@@ -86,7 +86,7 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     // Helper method to update Payment details
-    private void updatePaymentDetails(Payment payment, PaymentDto paymentDto) {
+    private void updatePaymentDetails( Payment payment, PaymentDto paymentDto ) {
         payment.setPayerName(paymentDto.payerName());
         payment.setPayerInn(paymentDto.payerInn());
         payment.setPayerCardNo(paymentDto.payerCardNo());

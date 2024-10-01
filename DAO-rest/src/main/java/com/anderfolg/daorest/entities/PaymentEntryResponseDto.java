@@ -9,4 +9,19 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 public class PaymentEntryResponseDto {
+
+        private Long id;
+        private String payerName;
+        private Long payerInn;
+        private Long payerCardNo;
+        private Long recipientAccount;
+        private String recipientMfo;
+        private Long recipientOkpo;
+        private String recipientName;
+        private Long paymentPeriod;
+        private Long paymentAmount;
+        private Long entryId;
+        private Long entryTime;
+        private Long entryAmount;
+        private String entryStatus;
 }

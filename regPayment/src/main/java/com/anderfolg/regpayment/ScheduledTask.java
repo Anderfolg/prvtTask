@@ -17,7 +17,9 @@ import java.util.List;
 public class ScheduledTask {
     private final RegPaymentService regPaymentService;
 
-    @Scheduled(fixedRateString = "${regpayment.scheduledTask.fixedRate}")
+    private static final String DELAY = "30000";
+
+    @Scheduled ( fixedRateString = DELAY)
     public void scheduleTaskWithFixedRate() {
         log.info("Scheduled task with fixed rate");
         regPaymentService.getAllPayments().forEach(payment -> {
