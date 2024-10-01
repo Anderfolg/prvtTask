@@ -1,8 +1,0 @@
-server:
-  servlet:
-    context-path: /api
-  port: 9090
-springdoc:
-    api-docs:
-      path: /api-docs
-url.prefix: http://localhost:8080

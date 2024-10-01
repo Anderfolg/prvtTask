@@ -88,13 +88,13 @@ public class PaymentServiceImpl implements PaymentService {
             throw new IllegalArgumentException("Payment not found for ID: " + paymentId);
         }
 
-        // Check if debiting is required
+
         List<PaymentEntry> history = getAllPaymentEntriesByPaymentId(paymentId);
         PaymentEntry lastEntry = history.stream()
                 .max(Comparator.comparing(PaymentEntry::getEntryTime))
                 .orElse(null);
 
-        // Create a new entry if needed based on paymentPeriod and last transaction
+
         if ( lastEntry == null || lastEntry.getEntryTime().plusDays(payment.getPaymentPeriod()).isBefore(LocalDateTime.now()) ) {
             PaymentEntry paymentEntry = PaymentEntry.builder()
                     .entryTime(LocalDateTime.now())

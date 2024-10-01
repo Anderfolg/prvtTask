@@ -21,12 +21,13 @@ public class PaymentEntryServiceImpl implements PaymentEntryService {
     @Override
     public PaymentEntry createPaymentEntry( PaymentEntryDto paymentEntryDTO ) {
         log.info("Creating new payment entry");
-
-        return PaymentEntry.builder()
+        PaymentEntry entry = PaymentEntry.builder()
                 .payment(paymentService.getPayment(paymentEntryDTO.paymentId()))
                 .amount(paymentEntryDTO.amount())
                 .entryTime(paymentEntryDTO.entryTime())
                 .build();
+        return paymentEntryRepository.save(entry);
+
     }
 
     @Override
