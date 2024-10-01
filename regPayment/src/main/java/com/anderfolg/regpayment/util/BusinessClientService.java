@@ -12,11 +12,10 @@ import org.springframework.beans.factory.annotation.Value;
 
 @Slf4j
 public class BusinessClientService {
-    @Value("${url.prefix}")
-    private static String urlPrefix;
     // GET method
     public static String get(String endpoint) {
-        String requestUrl = urlPrefix + endpoint;
+
+        String requestUrl = "http://localhost:9090/api" + endpoint;
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpGet getRequest = new HttpGet(requestUrl);
             log.debug("Processing GET request with URL: {}", requestUrl);
@@ -40,7 +39,7 @@ public class BusinessClientService {
 
     // POST method
     public static String post(String endpoint, String jsonBody) {
-        String requestUrl = urlPrefix + endpoint;
+        String requestUrl = "http://localhost:9090/api" + endpoint;
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpPost postRequest = new HttpPost(requestUrl);
             postRequest.setHeader("Content-Type", "application/json");

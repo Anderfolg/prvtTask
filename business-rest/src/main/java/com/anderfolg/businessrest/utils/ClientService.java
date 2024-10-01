@@ -18,7 +18,7 @@ public class ClientService {
     private static String urlPrefix;
 
     public static String get( String endpoint ) {
-        String requestUrl = urlPrefix + endpoint;
+        String requestUrl = "http://localhost:8090/api" + endpoint;
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpGet getRequest = new HttpGet(requestUrl);
             log.debug("Processing GET request with URL: {}", requestUrl);
@@ -40,7 +40,7 @@ public class ClientService {
     }
 
     public static String post( String endpoint, String jsonBody ) {
-        String requestUrl = urlPrefix + endpoint;
+        String requestUrl = "http://localhost:8090/api" + endpoint;
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpPost postRequest = new HttpPost(requestUrl);
             postRequest.setHeader("Content-Type", "application/json");
@@ -64,7 +64,7 @@ public class ClientService {
     }
 
     public static String update( String endpoint, String jsonBody ) {
-        String requestUrl = urlPrefix + endpoint;
+        String requestUrl = "http://localhost:8090/api" + endpoint;
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpPut putRequest = new HttpPut(requestUrl);
             putRequest.setHeader("Content-Type", "application/json");
@@ -88,7 +88,7 @@ public class ClientService {
     }
 
     public static boolean delete( String endpoint ) {
-        String requestUrl = urlPrefix + endpoint;
+        String requestUrl = "http://localhost:8090/api" + endpoint;
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpDelete deleteRequest = new HttpDelete(requestUrl);
             log.debug("Processing DELETE request with URL: {}", requestUrl);
